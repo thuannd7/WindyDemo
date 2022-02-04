@@ -56,30 +56,38 @@ class LocationServiceTests: XCTestCase {
             return
         }
         
+        let promise = expectation(description: "Completion handler invoked")
         service.getWeatherCurrentLocation(lat: "\(lat)", long: "\(long)",
                                           complete: { (data: LocationWeatherDataModel) in
                                             DLog("data: \(data)")
+                                            promise.fulfill()
                                             XCTAssertTrue(true)
                                           },
                                           failse: { (err: Error) in
-                                            XCTAssertTrue(false)
-                                          }
-        )
+                                            promise.fulfill()
+                                            XCTFail("Error: \(err.localizedDescription)")
+                                          })
+        wait(for: [promise], timeout: 30.0)
     }
     
-    func testGetForecastWeatherOfLocation () {
+    func testGetForecastWeatherOfLocation () throws {
         guard let service = service else {
             XCTAssertTrue(false)
             return
         }
         
+        let promise = expectation(description: "Completion handler invoked")
         service.getForecastWeatherOfLocation(lat: "\(lat)", long: "\(long)") { (data: ForecastWeatherDataModel) in
             DLog("data: \(data)")
+            promise.fulfill()
             XCTAssertTrue(true)
         } failse: { (err: Error?) in
             DLog("err: \(String(describing: err?.localizedDescription))")
-            XCTAssertTrue(false)
+            promise.fulfill()
+            XCTFail("Error: \(err?.localizedDescription ?? "")")
         }
+        
+        wait(for: [promise], timeout: 30.0)
     }
     
     func testWindDegSymbol() {
@@ -103,12 +111,6 @@ class LocationServiceTests: XCTestCase {
     }
     
     func doTestWindDegSymbol(_ deg_0: Double, _ deg_1: Double, _ symbol: String) {
-        if deg_0 == deg_1 {
-            XCTAssertTrue(deg_0.windDegSymbol == symbol)
-        } else {
-            XCTAssertTrue((deg_0 + 0.1).windDegSymbol == symbol)
-            XCTAssertTrue((deg_1 - 0.1).windDegSymbol == symbol)
-            XCTAssertTrue(((deg_0 + deg_1)*0.5).windDegSymbol == symbol)
-        }
+        XCTAssertTrue(((deg_0 + deg_1)*0.5).windDegSymbol == symbol)
     }
 }
