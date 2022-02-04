@@ -80,6 +80,7 @@
 		E419D832279DBE3C00E45135 /* ForecastWeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419D831279DBE3C00E45135 /* ForecastWeatherDataModel.swift */; };
 		E419D834279DBE5A00E45135 /* ForecaseInfor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419D833279DBE5A00E45135 /* ForecaseInfor.swift */; };
 		E419D836279DC15500E45135 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419D835279DC15500E45135 /* DoubleExtension.swift */; };
+		E42E4AD427AD80CC0059A404 /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42E4AD327AD80CC0059A404 /* LocationServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		E419D831279DBE3C00E45135 /* ForecastWeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherDataModel.swift; sourceTree = "<group>"; };
 		E419D833279DBE5A00E45135 /* ForecaseInfor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecaseInfor.swift; sourceTree = "<group>"; };
 		E419D835279DC15500E45135 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		E42E4AD327AD80CC0059A404 /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,6 +492,7 @@
 		E419D828279DA6C700E45135 /* WeatherDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				E42E4AD327AD80CC0059A404 /* LocationServiceTests.swift */,
 				E419D829279DA6C700E45135 /* WeatherDemoTests.swift */,
 				E419D82B279DA6C700E45135 /* Info.plist */,
 			);
@@ -752,6 +755,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42E4AD427AD80CC0059A404 /* LocationServiceTests.swift in Sources */,
 				E419D82A279DA6C700E45135 /* WeatherDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
