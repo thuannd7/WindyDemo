@@ -87,7 +87,7 @@ class HomeCurrenLocationTableViewCell: UITableViewCell {
         imvWind.transform = CGAffineTransform(rotationAngle:  CGFloat(data.current.wind_deg*(Double.pi/180)))
         lblLocationName.text = location?.name.capitalized
         lblTemp.text = String(format: "%.0f°C", data.current.temp.tempK2C)
-        lblWind.text = String(format: "Wind: %.1fm/s %@", data.current.wind_speed, data.current.wind_speed.windDegSymbol)
+        lblWind.text = String(format: "Wind: %.1fm/s %@", data.current.wind_speed, data.current.wind_deg.windDegSymbol)
         lblHumidity.text = "Humidity: \(Int(data.current.humidity))%"
         
         lblPressure.text = "Pressure: \(Int(data.current.pressure))hPa"

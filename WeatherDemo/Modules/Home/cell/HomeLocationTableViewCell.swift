@@ -28,7 +28,7 @@ class HomeLocationTableViewCell: MGSwipeTableCell {
         lblName.text = location.name
         
         if let current = data?.current {
-            lblWindSpeed.text = String(format: "%.1fm/s %@", current.wind_speed, current.wind_speed.windDegSymbol)
+            lblWindSpeed.text = String(format: "%.1fm/s %@", current.wind_speed, current.wind_deg.windDegSymbol)
             imvWind.transform = CGAffineTransform(rotationAngle:  CGFloat(current.wind_deg*(Double.pi/180)))
             lblTemp.text = String(format: "%.0f °C", current.temp.tempK2C)
         } else {

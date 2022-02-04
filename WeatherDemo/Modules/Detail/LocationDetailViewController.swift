@@ -67,7 +67,7 @@ class LocationDetailViewController: BaseViewController {
         
         lblLocationName.text = locationName?.capitalized
         lblTemp.text = String(format: "%.0f°C", data.temp.tempK2C)
-        lblWind.text = String(format: "Wind: %.1fm/s %@", data.wind_speed, data.wind_speed.windDegSymbol)
+        lblWind.text = String(format: "Wind: %.1fm/s %@", data.wind_speed, data.wind_deg.windDegSymbol)
         lblHumidity.text = "Humidity: \(Int(data.humidity))%"
         
         lblPressure.text = "Pressure: \(Int(data.pressure))hPa"
