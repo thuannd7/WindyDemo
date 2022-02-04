@@ -81,4 +81,34 @@ class LocationServiceTests: XCTestCase {
             XCTAssertTrue(false)
         }
     }
+    
+    func testWindDegSymbol() {
+        doTestWindDegSymbol(0.0, 0.0, "N")
+        doTestWindDegSymbol(0.0, 45.0, "NNE")
+        doTestWindDegSymbol(45.0, 45.0, "NE")
+        doTestWindDegSymbol(45.0, 90.0, "ENE")
+        doTestWindDegSymbol(90.0, 90.0, "E")
+        doTestWindDegSymbol(90.0, 135.0, "ESE")
+        doTestWindDegSymbol(135.0, 135.0, "SE")
+        doTestWindDegSymbol(135.0, 180.0, "SSE")
+        doTestWindDegSymbol(180.0, 180.0, "S")
+        doTestWindDegSymbol(180.0, 225.0, "SSW")
+        doTestWindDegSymbol(225.0, 225.0, "SW")
+        doTestWindDegSymbol(225.0, 270.0, "WSW")
+        doTestWindDegSymbol(270.0, 270.0, "W")
+        doTestWindDegSymbol(270.0, 315.0, "WW")
+        doTestWindDegSymbol(315.0, 315.0, "NW")
+        doTestWindDegSymbol(315.0, 360.0, "NNW")
+        doTestWindDegSymbol(360.0, 360.0, "N")
+    }
+    
+    func doTestWindDegSymbol(_ deg_0: Double, _ deg_1: Double, _ symbol: String) {
+        if deg_0 == deg_1 {
+            XCTAssertTrue(deg_0.windDegSymbol == symbol)
+        } else {
+            XCTAssertTrue((deg_0 + 0.1).windDegSymbol == symbol)
+            XCTAssertTrue((deg_1 - 0.1).windDegSymbol == symbol)
+            XCTAssertTrue(((deg_0 + deg_1)*0.5).windDegSymbol == symbol)
+        }
+    }
 }
