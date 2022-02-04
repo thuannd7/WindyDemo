@@ -100,7 +100,7 @@ class DataManager: NSObject {
     private func saveData() {
         let userDefault = UserDefaults.standard
         userDefault.setValue(listFavoriteLocationID, forKey: "listFavoriteLocationID")
-        userDefault.synchronize()
+        userDefault.synchronize() 
     }
     
     func doSearchLocation(name: String, complete: ((_ result: [LocationModel]) -> Void)?) {
