@@ -36,14 +36,6 @@ class LocationServiceTests: XCTestCase {
         service = nil
     }
     
-    func testSportFasterThanJeep() {
-        locationHelper?.getCurrentLocation { (location: CLLocation) in
-            XCTAssertTrue(true)
-        } _: { (status: CLAuthorizationStatus) in
-            XCTAssertTrue(false)
-        }
-    }
-    
     func testGetCurrentLocationData() {
         guard let locationHelper = locationHelper else {
             XCTAssertTrue(false)
